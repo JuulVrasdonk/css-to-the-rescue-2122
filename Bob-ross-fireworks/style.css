@@ -1,0 +1,105 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(2, 4, 17);
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+
+img {
+    -webkit-mask: 
+    url('./img/particle.svg') 10% 50% no-repeat,
+    url('./img/particle.svg') 20% 50% no-repeat,
+    url('./img/particle.svg') 30% 50% no-repeat,
+    url('./img/particle.svg') 40% 50% no-repeat,
+    url('./img/particle.svg') 50% 50% no-repeat, 
+    url('./img/particle.svg') 60% 50% no-repeat, 
+    url('./img/particle.svg') 70% 50% no-repeat,
+    url('./img/particle.svg') 80% 50% no-repeat,
+    url('./img/particle.svg') 90% 50% no-repeat,
+
+    url('./img/particle.svg') 50% 10% no-repeat, 
+    url('./img/particle.svg') 50% 20% no-repeat, 
+    url('./img/particle.svg') 50% 30% no-repeat,
+    url('./img/particle.svg') 50% 40% no-repeat,  
+    url('./img/particle.svg') 50% 60% no-repeat, 
+    url('./img/particle.svg') 50% 70% no-repeat, 
+    url('./img/particle.svg') 50% 80% no-repeat, 
+    url('./img/particle.svg') 50% 90% no-repeat,
+
+    url('./img/particle.svg') 40% 10% no-repeat, 
+    url('./img/particle.svg') 40% 20% no-repeat, 
+    url('./img/particle.svg') 40% 30% no-repeat,
+    url('./img/particle.svg') 40% 40% no-repeat,  
+    url('./img/particle.svg') 40% 60% no-repeat, 
+    url('./img/particle.svg') 40% 70% no-repeat, 
+    url('./img/particle.svg') 40% 80% no-repeat, 
+    url('./img/particle.svg') 40% 90% no-repeat,
+
+    url('./img/particle.svg') 60% 10% no-repeat, 
+    url('./img/particle.svg') 60% 20% no-repeat, 
+    url('./img/particle.svg') 60% 30% no-repeat,
+    url('./img/particle.svg') 60% 40% no-repeat,  
+    url('./img/particle.svg') 60% 60% no-repeat, 
+    url('./img/particle.svg') 60% 70% no-repeat, 
+    url('./img/particle.svg') 60% 80% no-repeat, 
+    url('./img/particle.svg') 60% 90% no-repeat,
+
+    url('./img/particle.svg') 30% 20% no-repeat, 
+    url('./img/particle.svg') 30% 30% no-repeat,
+    url('./img/particle.svg') 30% 40% no-repeat,  
+    url('./img/particle.svg') 30% 60% no-repeat, 
+    url('./img/particle.svg') 30% 70% no-repeat, 
+    url('./img/particle.svg') 30% 80% no-repeat, 
+
+    url('./img/particle.svg') 70% 20% no-repeat, 
+    url('./img/particle.svg') 70% 30% no-repeat,
+    url('./img/particle.svg') 70% 40% no-repeat,  
+    url('./img/particle.svg') 70% 60% no-repeat, 
+    url('./img/particle.svg') 70% 70% no-repeat, 
+    url('./img/particle.svg') 70% 80% no-repeat, 
+
+    url('./img/particle.svg') 20% 30% no-repeat,
+    url('./img/particle.svg') 20% 40% no-repeat,  
+    url('./img/particle.svg') 20% 60% no-repeat, 
+    url('./img/particle.svg') 20% 70% no-repeat, 
+    
+    url('./img/particle.svg') 80% 30% no-repeat,
+    url('./img/particle.svg') 80% 40% no-repeat,  
+    url('./img/particle.svg') 80% 60% no-repeat, 
+    url('./img/particle.svg') 80% 70% no-repeat, 
+
+    url('./img/particle.svg') 10% 40% no-repeat,  
+    url('./img/particle.svg') 10% 60% no-repeat, 
+
+    url('./img/particle.svg') 90% 40% no-repeat,  
+    url('./img/particle.svg') 90% 60% no-repeat;
+
+
+    width: 500px;
+    animation: test 1s infinite;
+}
+
+@keyframes test {
+    0% {
+        -webkit-mask-size: 0%;
+    }
+    50% {
+        /* -webkit-mask-position: 0% 0%; */
+        -webkit-mask-size: 5%, 0%, 0%, 0%, 5%, 0%;
+    }
+    100% {
+        -webkit-mask-size: 5%;
+    }
+}
+
+
