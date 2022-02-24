@@ -1,3 +1,5 @@
+/* BASIC STYLING */
+
 * {
     margin: 0px;
     padding: 0px;
@@ -10,6 +12,8 @@
     height: 100%;
     overflow: hidden;
  }
+
+/* ALLROUND STYLING */
  
 
  .container {
@@ -29,23 +33,26 @@
  .cube input {
     position: absolute;
     top: -1000em;
-    appearance: none;
  }
+
+ /* .first-row .cube input {
+    position: absolute;
+    top: -3em;
+ } */
  
  .cube label {
     width: 100px;
     height: 100px;
     position: absolute;
-    background: red;
-    box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
  }
 
-
  .cube input:checked ~ label {
-    background-color: aqua;
+    background-color: red;
     box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
 }
  
+/* 3D styling cubes */
+
  .cube label.top {
     transform: rotateX(90deg);
     margin-top: -50px;
@@ -75,114 +82,110 @@
  }
 
 
-.cube1 {
+.pos1 {
     transform: rotateX(-20deg) rotateY(-45deg);
  }
 
-.cube2 {
+.pos2 {
     transform: rotateX(-20deg) rotateY(-45deg) translateZ(100px);
  }
 
-.cube2 label {
-    background-color: aqua;
- }
- 
-.cube3 {
+.pos3 {
     transform: rotateX(-20deg) rotateY(-45deg) translateZ(200px);
  }
 
-.cube3 label {
-     background-color: purple;
- }
-
-.cube4 {
+.pos4 {
      transform: rotateX(-20deg) rotateY(-45deg) translateX(100px);
  }
-.cube4 label {
-    background-color: yellow;
-}
 
-.cube5 {
+.pos5 {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(100px);
 }
 
-.cube5 label {
-    background-color: green;
-}
-
-.cube6 {
+.pos6 {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(200px);
 }
 
-.cube6 label {
-    background-color: blue;
-}
-
-.cube7 {
+.pos7 {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(0px);
 }
 
-.cube7 label {
-    background-color: beige;
-}
-
-.cube8 {
+.pos8 {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(100px);
 }
 
-.cube8 label {
-    background-color: coral;
-}
-
- .cube9 {
+.pos9 {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(200px);
 }
 
-.cube9 label {
-    background-color: darkorange;
-}
+/* Styling the different rows */
 
-.middle-row {
+.first-row {
     transform: translateY(-94px);
 }
 
-.middle-row > div > label, .top-row > div > label {
+/* .first-row > div > label{
     background-color: purple;
     box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
-}
+} */
 
-
-.top-row {
+.second-row {
     transform: translateY(-188px);
-    pointer-events: none;
 }
 
-.middle-row > div:hover > label, .top-row > div:hover > label{
+.first-row > div:hover > label{
     box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
-    filter: contrast(200%)
+    filter: contrast(200%);
 }
 
-label {
-    appearance: none;
-}
-div label:checked {
-    background-color: aqua;
+.first-row > div > label {
+    background-color: rgb(194, 126, 25);
 }
 
-div label{
-    width: 100px;
-    height: 100px;
-    background-color: aquamarine;
+.container:has(.first-row):has(.cube11):has(#cube11:not(:checked)) > .second-row .cube12,
+.container:has(.first-row):has(.cube21):has(#cube21:not(:checked)) > .second-row .cube22,
+.container:has(.first-row):has(.cube31):has(#cube31:not(:checked)) > .second-row .cube32,
+.container:has(.first-row):has(.cube41):has(#cube41:not(:checked)) > .second-row .cube42,
+.container:has(.first-row):has(.cube51):has(#cube51:not(:checked)) > .second-row .cube52,
+.container:has(.first-row):has(.cube61):has(#cube61:not(:checked)) > .second-row .cube62,
+.container:has(.first-row):has(.cube71):has(#cube71:not(:checked)) > .second-row .cube72,
+.container:has(.first-row):has(.cube81):has(#cube81:not(:checked)) > .second-row .cube82,
+.container:has(.first-row):has(.cube91):has(#cube91:not(:checked)) > .second-row .cube92{
+    background-color: transparent;
+    display: none;
+}
+
+.container:has(.first-row):has(.cube11):has(#cube11:checked) > .second-row .cube12,
+.container:has(.first-row):has(.cube21):has(#cube21:checked) > .second-row .cube22,
+.container:has(.first-row):has(.cube31):has(#cube31:checked) > .second-row .cube32,
+.container:has(.first-row):has(.cube41):has(#cube41:checked) > .second-row .cube42,
+.container:has(.first-row):has(.cube51):has(#cube51:checked) > .second-row .cube52,
+.container:has(.first-row):has(.cube61):has(#cube61:checked) > .second-row .cube62,
+.container:has(.first-row):has(.cube71):has(#cube71:checked) > .second-row .cube72,
+.container:has(.first-row):has(.cube81):has(#cube81:checked) > .second-row .cube82,
+.container:has(.first-row):has(.cube91):has(#cube91:checked) > .second-row .cube92 {
+    /* pointer-events: all; */
     display: block;
 }
 
-body > div:first-of-type {
-    width: 100px;
-    height: 100px;
+
+.container:has(.first-row):has(.cube11):has(#cube11:checked) > .second-row .cube12:hover label,
+.container:has(.first-row):has(.cube21):has(#cube21:checked) > .second-row .cube22:hover label,
+.container:has(.first-row):has(.cube31):has(#cube31:checked) > .second-row .cube32:hover label,
+.container:has(.first-row):has(.cube41):has(#cube41:checked) > .second-row .cube42:hover label,
+.container:has(.first-row):has(.cube51):has(#cube51:checked) > .second-row .cube52:hover label,
+.container:has(.first-row):has(.cube61):has(#cube61:checked) > .second-row .cube62:hover label,
+.container:has(.first-row):has(.cube71):has(#cube71:checked) > .second-row .cube72:hover label,
+.container:has(.first-row):has(.cube81):has(#cube81:checked) > .second-row .cube82:hover label,
+.container:has(.first-row):has(.cube91):has(#cube91:checked) > .second-row .cube92:hover label {
+    box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
 }
 
-.cube1:has(input:checked) {
-    background-color: aqua;
+/* PLAYGROUND */
+
+
+body > div:first-of-type {
+    width: 100px;
     height: 100px;
 }
 
@@ -193,10 +196,19 @@ body > .playground{
     background-color: maroon;
 }
 
-/* Eerste keer dat ik has() gebruik. Best nice maar nu word .cube9 uit .top-row altijd de kleur
-bisque als een blok uit de bottom-row checked is. */
+.playground:has(div):has(div):has(div):has(.test:checked) label{
+    background-color: purple;
+}
 
-.container:has(.middle-row):has(.cube1):has(input:checked) > .top-row > .cube9 label{
-    pointer-events: all;
+.rotate {
+    transform: rotateX(-20deg) rotateY(-85deg);
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+
+.rotate div { 
+    width: 50px;
+    height: 50px;
     background-color: bisque;
 }
