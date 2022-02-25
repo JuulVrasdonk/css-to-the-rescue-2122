@@ -15,131 +15,203 @@
 
 /* ALLROUND STYLING */
  
+.blokkendoos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
- .container {
-    position: relative;
-    top: 50%;
-    left: 50%;
- }
+.container {
+    position: absolute;
+    z-index: 999;
+}
 
+.row { 
+    transform:  translateY(-54px) translateX(-17px);
+}
 
- .cube {
-    width: 100px;
-    height: 100px;
+.cube {
     position: absolute;
     transform-style: preserve-3d;
- }
+}
 
- .cube input {
+.cube input {
     position: absolute;
     top: -1000em;
- }
-
- /* .first-row .cube input {
-    position: absolute;
-    top: -3em;
- } */
+}
  
- .cube label {
-    width: 100px;
-    height: 100px;
+.cube label {
+    width: 50px;
+    height: 50px;
     position: absolute;
- }
+    /* box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.2); */
+}
 
- .cube input:checked ~ label {
+.cube input:checked ~ label {
     background-color: red;
     box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
 }
+
+
+/* Grid floor */
+
+.floor {
+    position: absolute;
+    z-index: 0;
+    width: 250px;
+    height: 250px;
+    background-image: linear-gradient(rgb(216, 216, 216) 1px, transparent 1px), linear-gradient(90deg, rgb(216, 216, 216) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+    transform: rotateX(-20deg) rotateY(-45deg) rotateX(90deg) translateZ(-50px);
+    border: 1px solid rgb(216, 216, 216);
+}
+
+
  
 /* 3D styling cubes */
 
+
+
  .cube label.top {
     transform: rotateX(90deg);
-    margin-top: -50px;
+    margin-top: -25px;
  }
  
  .cube label.right {
     transform: rotateY(90deg); 
-    margin-left: 50px;
+    margin-left: 25px;
  }
  
  .cube label.bottom {
    transform: rotateX(90deg);
-   margin-top: 50px;
+   margin-top: 25px;
  }
  
  .cube label.left {
     transform: rotateY(-90deg);
-    margin-left: -50px;
+    margin-left: -25px;
  }
  
  .cube label.front {
-    transform: translateZ(50px); 
+    transform: translateZ(25px); 
  }
  
  .cube label.back {
-    transform: translateZ(-50px); 
+    transform: translateZ(-25px); 
  }
 
-
-.pos1 {
+.row div:nth-of-type(1){
     transform: rotateX(-20deg) rotateY(-45deg);
+}
+
+.row div:nth-of-type(2) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateZ(50px);
  }
 
-.pos2 {
+.row div:nth-of-type(3) {
     transform: rotateX(-20deg) rotateY(-45deg) translateZ(100px);
  }
 
-.pos3 {
-    transform: rotateX(-20deg) rotateY(-45deg) translateZ(200px);
+.row div:nth-of-type(4) {
+     transform: rotateX(-20deg) rotateY(-45deg) translateZ(150px);
  }
 
-.pos4 {
-     transform: rotateX(-20deg) rotateY(-45deg) translateX(100px);
- }
+.row div:nth-of-type(5) {
+    transform: rotateX(-20deg) rotateY(-45deg)  translateZ(200px);
+}
 
-.pos5 {
+.row div:nth-of-type(6) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px);
+}
+
+.row div:nth-of-type(7) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(50px);
+}
+
+.row div:nth-of-type(8) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(100px);
+}
+
+.row div:nth-of-type(9) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(150px);
+}
+
+.row div:nth-of-type(10) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(200px);
+}
+
+.row div:nth-of-type(11) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px);
+}
+
+.row div:nth-of-type(12) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(50px);
+}
+
+.row div:nth-of-type(13) {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(100px);
 }
 
-.pos6 {
+.row div:nth-of-type(14) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(150px);
+}
+
+.row div:nth-of-type(15) {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(200px);
 }
 
-.pos7 {
-    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(0px);
+.row div:nth-of-type(16) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px);
 }
 
-.pos8 {
+.row div:nth-of-type(17) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(50px);
+}
+
+.row div:nth-of-type(18) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(100px);
+}
+
+.row div:nth-of-type(19) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(150px);
+}
+
+.row div:nth-of-type(20) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(200px);
+}
+
+.row div:nth-of-type(21) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px);
+}
+
+.row div:nth-of-type(22) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(50px);
+}
+
+.row div:nth-of-type(23) {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(100px);
 }
 
-.pos9 {
+.row div:nth-of-type(24) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(150px);
+}
+
+.row div:nth-of-type(25) {
     transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(200px);
 }
 
+
+
 /* Styling the different rows */
-
-.first-row {
-    transform: translateY(-94px);
-}
-
-/* .first-row > div > label{
-    background-color: purple;
-    box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
-} */
-
 .second-row {
-    transform: translateY(-188px);
+    transform: translateY(-101px) translateX(-17px);
 }
 
 .first-row > div:hover > label{
     box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
     filter: contrast(200%);
-}
-
-.first-row > div > label {
-    background-color: rgb(194, 126, 25);
 }
 
 .container:has(.first-row):has(.cube11):has(#cube11:not(:checked)) > .second-row .cube12,
@@ -150,7 +222,23 @@
 .container:has(.first-row):has(.cube61):has(#cube61:not(:checked)) > .second-row .cube62,
 .container:has(.first-row):has(.cube71):has(#cube71:not(:checked)) > .second-row .cube72,
 .container:has(.first-row):has(.cube81):has(#cube81:not(:checked)) > .second-row .cube82,
-.container:has(.first-row):has(.cube91):has(#cube91:not(:checked)) > .second-row .cube92{
+.container:has(.first-row):has(.cube91):has(#cube91:not(:checked)) > .second-row .cube92,
+.container:has(.first-row):has(.cube101):has(#cube101:not(:checked)) > .second-row .cube102,
+.container:has(.first-row):has(.cube111):has(#cube111:not(:checked)) > .second-row .cube112,
+.container:has(.first-row):has(.cube121):has(#cube121:not(:checked)) > .second-row .cube122,
+.container:has(.first-row):has(.cube131):has(#cube131:not(:checked)) > .second-row .cube132,
+.container:has(.first-row):has(.cube141):has(#cube141:not(:checked)) > .second-row .cube142,
+.container:has(.first-row):has(.cube151):has(#cube151:not(:checked)) > .second-row .cube152,
+.container:has(.first-row):has(.cube161):has(#cube161:not(:checked)) > .second-row .cube162,
+.container:has(.first-row):has(.cube171):has(#cube171:not(:checked)) > .second-row .cube172,
+.container:has(.first-row):has(.cube181):has(#cube181:not(:checked)) > .second-row .cube182,
+.container:has(.first-row):has(.cube191):has(#cube191:not(:checked)) > .second-row .cube192,
+.container:has(.first-row):has(.cube201):has(#cube201:not(:checked)) > .second-row .cube202,
+.container:has(.first-row):has(.cube211):has(#cube211:not(:checked)) > .second-row .cube212,
+.container:has(.first-row):has(.cube221):has(#cube221:not(:checked)) > .second-row .cube222,
+.container:has(.first-row):has(.cube231):has(#cube231:not(:checked)) > .second-row .cube232,
+.container:has(.first-row):has(.cube241):has(#cube241:not(:checked)) > .second-row .cube242,
+.container:has(.first-row):has(.cube251):has(#cube251:not(:checked)) > .second-row .cube252{
     background-color: transparent;
     display: none;
 }
@@ -163,7 +251,23 @@
 .container:has(.first-row):has(.cube61):has(#cube61:checked) > .second-row .cube62,
 .container:has(.first-row):has(.cube71):has(#cube71:checked) > .second-row .cube72,
 .container:has(.first-row):has(.cube81):has(#cube81:checked) > .second-row .cube82,
-.container:has(.first-row):has(.cube91):has(#cube91:checked) > .second-row .cube92 {
+.container:has(.first-row):has(.cube91):has(#cube91:checked) > .second-row .cube92,
+.container:has(.first-row):has(.cube101):has(#cube101:checked) > .second-row .cube102,
+.container:has(.first-row):has(.cube111):has(#cube111:checked) > .second-row .cube112,
+.container:has(.first-row):has(.cube121):has(#cube121:checked) > .second-row .cube122,
+.container:has(.first-row):has(.cube131):has(#cube131:checked) > .second-row .cube132,
+.container:has(.first-row):has(.cube141):has(#cube141:checked) > .second-row .cube142,
+.container:has(.first-row):has(.cube151):has(#cube151:checked) > .second-row .cube152,
+.container:has(.first-row):has(.cube161):has(#cube161:checked) > .second-row .cube162,
+.container:has(.first-row):has(.cube171):has(#cube171:checked) > .second-row .cube172,
+.container:has(.first-row):has(.cube181):has(#cube181:checked) > .second-row .cube182,
+.container:has(.first-row):has(.cube191):has(#cube191:checked) > .second-row .cube192,
+.container:has(.first-row):has(.cube201):has(#cube201:checked) > .second-row .cube202,
+.container:has(.first-row):has(.cube211):has(#cube211:checked) > .second-row .cube212,
+.container:has(.first-row):has(.cube221):has(#cube221:checked) > .second-row .cube222,
+.container:has(.first-row):has(.cube231):has(#cube231:checked) > .second-row .cube232,
+.container:has(.first-row):has(.cube241):has(#cube241:checked) > .second-row .cube242,
+.container:has(.first-row):has(.cube251):has(#cube251:checked) > .second-row .cube252 {
     /* pointer-events: all; */
     display: block;
 }
@@ -177,7 +281,23 @@
 .container:has(.first-row):has(.cube61):has(#cube61:checked) > .second-row .cube62:hover label,
 .container:has(.first-row):has(.cube71):has(#cube71:checked) > .second-row .cube72:hover label,
 .container:has(.first-row):has(.cube81):has(#cube81:checked) > .second-row .cube82:hover label,
-.container:has(.first-row):has(.cube91):has(#cube91:checked) > .second-row .cube92:hover label {
+.container:has(.first-row):has(.cube91):has(#cube91:checked) > .second-row .cube92:hover label,
+.container:has(.first-row):has(.cube101):has(#cube101:checked) > .second-row .cube102:hover label,
+.container:has(.first-row):has(.cube111):has(#cube111:checked) > .second-row .cube112:hover label,
+.container:has(.first-row):has(.cube121):has(#cube121:checked) > .second-row .cube122:hover label,
+.container:has(.first-row):has(.cube131):has(#cube131:checked) > .second-row .cube132:hover label,
+.container:has(.first-row):has(.cube141):has(#cube141:checked) > .second-row .cube142:hover label,
+.container:has(.first-row):has(.cube151):has(#cube151:checked) > .second-row .cube152:hover label,
+.container:has(.first-row):has(.cube161):has(#cube161:checked) > .second-row .cube162:hover label,
+.container:has(.first-row):has(.cube171):has(#cube171:checked) > .second-row .cube172:hover label,
+.container:has(.first-row):has(.cube181):has(#cube181:checked) > .second-row .cube182:hover label,
+.container:has(.first-row):has(.cube191):has(#cube191:checked) > .second-row .cube192:hover label,
+.container:has(.first-row):has(.cube201):has(#cube201:checked) > .second-row .cube202:hover label,
+.container:has(.first-row):has(.cube211):has(#cube211:checked) > .second-row .cube212:hover label,
+.container:has(.first-row):has(.cube221):has(#cube221:checked) > .second-row .cube222:hover label,
+.container:has(.first-row):has(.cube231):has(#cube231:checked) > .second-row .cube232:hover label,
+.container:has(.first-row):has(.cube241):has(#cube241:checked) > .second-row .cube242:hover label,
+.container:has(.first-row):has(.cube251):has(#cube251:checked) > .second-row .cube252:hover label {
     box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
 }
 
