@@ -1,0 +1,332 @@
+/* BASIC STYLING */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+ }
+ 
+ html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+ }
+
+/* ALLROUND STYLING */
+
+body {
+    background-color:#212121;
+}
+ 
+body > div:first-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+article {
+    position: absolute;
+    z-index: 999;
+}
+
+article > section > div {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+article > section > div input, form input {
+    position: absolute;
+    top: -1000em;
+}
+
+article > section > div label {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+article > section > div input:checked ~ label {
+    background-color: #4189CB;
+    box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Layers Control */
+
+form {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+form > div {
+    width: 50px;
+    height: 50px;
+    display: block;
+    transform: rotateX(-20deg) rotateY(-45deg) rotateX(90deg) translateZ(20px);
+    background-color: #4189CB;
+    box-sizing: content-box;
+    box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
+    opacity: .5;
+}
+
+form [for^="layer"] {
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-color: #4189CB;
+    box-sizing: content-box;
+}
+
+form [for^="layer"]:nth-of-type(2) {
+    transform: rotateX(-20deg) rotateY(-45deg) rotateX(90deg) translateZ(-10px);
+    opacity: .7;
+}
+
+form [for^="layer"]:nth-of-type(1) {
+    transform: rotateX(-20deg) rotateY(-45deg) rotateX(90deg) translateZ(-40px);
+    opacity: .9;
+}
+
+form [for^="layer"]::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
+    display: block;
+    transition: 1s;
+    z-index: -1;
+    position: relative;
+}
+
+form #layer2:checked ~ [for="layer2"]::after, form #layer2:checked ~ [for="layer3"]::after{
+    transform: translateX(100px) translateY(-100px);
+    transition: 1s;
+}
+
+form #layer3:checked ~ [for="layer3"]::after {
+    transform: translateX(100px) translateY(-100px);
+    transition: 1s;
+}
+
+body:has(form):has(#layer1:checked) > div > article > section:nth-of-type(1){
+    transform: translateX(400px) translateY(-101px);
+    transition: 1s;
+}
+
+body:has(form):has(#layer1:checked) > div > article > section:nth-of-type(2), body:has(form):has(#layer2:checked) > div > article > section:nth-of-type(2) {
+    transform: translateX(400px) translateY(-148px);
+    transition: 1s;
+}
+
+body:has(form):has(#layer1:checked) > div > article > section:nth-of-type(3), body:has(form):has(#layer2:checked) > div > article > section:nth-of-type(3), body:has(form):has(#layer3:checked) > div > article > section:nth-of-type(3){
+    transform: translateX(400px) translateY(-195px);
+    transition: 1s;
+}
+
+
+/* Grid floor */
+
+body > div:first-of-type > div:first-of-type {
+    position: absolute;
+    z-index: 0;
+    width: 250px;
+    height: 250px;
+    background-image: linear-gradient(rgb(135, 135, 135) 1px, transparent 1px), linear-gradient(90deg, rgb(135, 135, 135) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+    transform: rotateX(-20deg) rotateY(-45deg) rotateX(90deg) translateZ(-50px);
+    border: 1px solid rgb(135, 135, 135);
+}
+
+
+ 
+/* 3D styling cubes */
+
+
+
+ article > section > div label:first-of-type {
+    transform: rotateX(90deg);
+    margin-top: -25px;
+ }
+ 
+ article > section > div label:nth-of-type(2) {
+    transform: rotateY(90deg); 
+    margin-left: 25px;
+ }
+ 
+ article > section > div label:nth-of-type(3) {
+   transform: rotateX(90deg);
+   margin-top: 25px;
+ }
+ 
+ article > section > div label:nth-of-type(4) {
+    transform: rotateY(-90deg);
+    margin-left: -25px;
+ }
+
+article > section > div label:nth-of-type(5) {
+    transform: translateZ(-25px); 
+}
+ 
+ article > section > div label:nth-of-type(6) {
+    transform: translateZ(25px); 
+ }
+ 
+
+
+article > section div:nth-of-type(1){
+    transform: rotateX(-20deg) rotateY(-45deg);
+}
+
+article > section div:nth-of-type(2) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateZ(50px);
+ }
+
+article > section div:nth-of-type(3) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateZ(100px);
+ }
+
+article > section div:nth-of-type(4) {
+     transform: rotateX(-20deg) rotateY(-45deg) translateZ(150px);
+ }
+
+article > section div:nth-of-type(5) {
+    transform: rotateX(-20deg) rotateY(-45deg)  translateZ(200px);
+}
+
+article > section div:nth-of-type(6) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px);
+}
+
+article > section div:nth-of-type(7) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(50px);
+}
+
+article > section div:nth-of-type(8) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(100px);
+}
+
+article > section div:nth-of-type(9) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(150px);
+}
+
+article > section div:nth-of-type(10) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(200px);
+}
+
+article > section div:nth-of-type(11) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px);
+}
+
+article > section div:nth-of-type(12) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(50px);
+}
+
+article > section div:nth-of-type(13) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(100px);
+}
+
+article > section div:nth-of-type(14) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(150px);
+}
+
+article > section div:nth-of-type(15) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(200px);
+}
+
+article > section div:nth-of-type(16) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px);
+}
+
+article > section div:nth-of-type(17) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(50px);
+}
+
+article > section div:nth-of-type(18) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(100px);
+}
+
+article > section div:nth-of-type(19) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(150px);
+}
+
+article > section div:nth-of-type(20) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(200px);
+}
+
+article > section div:nth-of-type(21) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px);
+}
+
+article > section div:nth-of-type(22) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(50px);
+}
+
+article > section div:nth-of-type(23) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(100px);
+}
+
+article > section div:nth-of-type(24) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(150px);
+}
+
+article > section div:nth-of-type(25) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(200px);
+}
+
+
+
+/* Styling the different rows */
+section:first-of-type { 
+    transform:  translateY(-54px) translateX(-17px);
+    transition: 1s;
+}
+
+section:nth-of-type(2) {
+    transform: translateY(-101px) translateX(-17px);
+    transition: 1s;
+}
+
+section:nth-of-type(3) {
+    transform: translateY(-148px) translateX(-17px);
+    transition: 1s;
+}
+
+section:first-of-type > div:hover > label{
+    box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
+    filter: contrast(200%);
+}
+
+%remove-block {
+    display: none !important;
+}
+
+%add-block {
+    display: block;
+}
+
+@mixin gravity {
+    @for $i from 1 through 25 {
+        article:has(section:first-of-type):has(div:nth-of-type(#{$i})):has(#cube1-#{$i}:not(:checked)) > section:nth-of-type(2) div:nth-of-type(#{$i}),
+        article:has(section:nth-of-type(2)):has(div:nth-of-type(#{$i})):has(#cube2-#{$i}:not(:checked)) > section:nth-of-type(3) div:nth-of-type(#{$i}),
+        article:has(section:first-of-type):has(div:nth-of-type(#{$i})):has(#cube1-#{$i}:not(:checked)) > section:nth-of-type(3) div:nth-of-type(#{$i})
+        {
+            @extend %remove-block;
+        }
+        article:has(section:first-of-type):has(div:nth-of-type(#{$i})):has(#cube1-#{$i}:checked) > section:nth-of-type(2) div:nth-of-type(#{$i}),
+        article:has(section:nth-of-type(2)):has(div:nth-of-type(#{$i})):has(#cube2-#{$i}:checked) > section:nth-of-type(3) div:nth-of-type(#{$i}),
+        article:has(section:first-of-type):has(div:nth-of-type(#{$i})):has(#cube1-#{$i}:checked) > section:nth-of-type(3) div:nth-of-type(#{$i})
+        {
+            @extend %add-block;
+        }
+        article:has(section:first-of-type):has(div:nth-of-type(#{$i})):has(#cube1-#{$i}:checked) > section:nth-of-type(2) div:nth-of-type(#{$i}):hover label,
+        article:has(section:nth-of-type(2)):has(div:nth-of-type(#{$i})):has(#cube2-#{$i}:checked) > section:nth-of-type(3) div:nth-of-type(#{$i}):hover label
+        {
+            box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
+        }
+    }
+}
+
+@include gravity;

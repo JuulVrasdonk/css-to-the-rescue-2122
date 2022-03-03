@@ -1,0 +1,499 @@
+/* BASIC STYLING */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+ }
+ 
+ html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+ }
+
+/* ALLROUND STYLING */
+ 
+.blokkendoos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: absolute;
+    z-index: 999;
+}
+
+.cube {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.cube input, .controls input {
+    position: absolute;
+    top: -1000em;
+}
+
+
+ 
+.cube label {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /* box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.2); */
+}
+
+.cube input:checked ~ label {
+    background-color: red;
+    box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+/* Layers Control */
+
+.controls {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+}
+
+.controls .layer1 {
+    width: 50px;
+    height: 50px;
+    display: block;
+    transform: rotateX(-20deg) rotateY(-45deg) rotateX(90deg) translateZ(-50px);
+    border: 5px solid rgb(216, 216, 216);
+    box-sizing: content-box;
+}
+
+.controls .layer1::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    display: block;
+    transition: 1s;
+}
+
+.controls #layer1:checked ~ .layer1::after {
+    transform: translateX(100px) translateY(-100px);
+    transition: 1s;
+}
+
+
+
+body:has(.controls):has(#layer1:checked) > .blokkendoos > .container > .second-row{
+    transform: translateX(400px) translateY(-101px);
+    transition: 1s;
+}
+
+body:has(.controls):has(#layer1:checked) > .blokkendoos > .container > .third-row {
+    transform: translateX(400px) translateY(-148px);
+    transition: 1s;
+}
+
+
+/* body:has(.controls):has(input:not(:checked)){
+    background-color: purple;
+} */
+
+
+/* Grid floor */
+
+.floor {
+    position: absolute;
+    z-index: 0;
+    width: 250px;
+    height: 250px;
+    background-image: linear-gradient(rgb(216, 216, 216) 1px, transparent 1px), linear-gradient(90deg, rgb(216, 216, 216) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+    transform: rotateX(-20deg) rotateY(-45deg) rotateX(90deg) translateZ(-50px);
+    border: 1px solid rgb(216, 216, 216);
+}
+
+
+ 
+/* 3D styling cubes */
+
+
+
+ .cube label.top {
+    transform: rotateX(90deg);
+    margin-top: -25px;
+ }
+ 
+ .cube label.right {
+    transform: rotateY(90deg); 
+    margin-left: 25px;
+ }
+ 
+ .cube label.bottom {
+   transform: rotateX(90deg);
+   margin-top: 25px;
+ }
+ 
+ .cube label.left {
+    transform: rotateY(-90deg);
+    margin-left: -25px;
+ }
+ 
+ .cube label.front {
+    transform: translateZ(25px); 
+ }
+ 
+ .cube label.back {
+    transform: translateZ(-25px); 
+ }
+
+.row div:nth-of-type(1){
+    transform: rotateX(-20deg) rotateY(-45deg);
+}
+
+.row div:nth-of-type(2) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateZ(50px);
+ }
+
+.row div:nth-of-type(3) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateZ(100px);
+ }
+
+.row div:nth-of-type(4) {
+     transform: rotateX(-20deg) rotateY(-45deg) translateZ(150px);
+ }
+
+.row div:nth-of-type(5) {
+    transform: rotateX(-20deg) rotateY(-45deg)  translateZ(200px);
+}
+
+.row div:nth-of-type(6) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px);
+}
+
+.row div:nth-of-type(7) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(50px);
+}
+
+.row div:nth-of-type(8) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(100px);
+}
+
+.row div:nth-of-type(9) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(150px);
+}
+
+.row div:nth-of-type(10) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(50px) translateZ(200px);
+}
+
+.row div:nth-of-type(11) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px);
+}
+
+.row div:nth-of-type(12) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(50px);
+}
+
+.row div:nth-of-type(13) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(100px);
+}
+
+.row div:nth-of-type(14) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(150px);
+}
+
+.row div:nth-of-type(15) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(100px) translateZ(200px);
+}
+
+.row div:nth-of-type(16) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px);
+}
+
+.row div:nth-of-type(17) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(50px);
+}
+
+.row div:nth-of-type(18) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(100px);
+}
+
+.row div:nth-of-type(19) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(150px);
+}
+
+.row div:nth-of-type(20) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(150px) translateZ(200px);
+}
+
+.row div:nth-of-type(21) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px);
+}
+
+.row div:nth-of-type(22) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(50px);
+}
+
+.row div:nth-of-type(23) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(100px);
+}
+
+.row div:nth-of-type(24) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(150px);
+}
+
+.row div:nth-of-type(25) {
+    transform: rotateX(-20deg) rotateY(-45deg) translateX(200px) translateZ(200px);
+}
+
+
+
+/* Styling the different rows */
+.first-row { 
+    transform:  translateY(-54px) translateX(-17px);
+}
+
+.second-row {
+    transform: translateY(-101px) translateX(-17px);
+    transition: 1s;
+}
+
+.third-row {
+    transform: translateY(-148px) translateX(-17px);
+    transition: 1s;
+}
+
+.first-row > div:hover > label{
+    box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
+    filter: contrast(200%);
+}
+
+
+
+
+
+/* Block placement and physics */
+
+.container:has(.first-row):has(.cube11):has(#cube11:not(:checked)) > .second-row .cube12,
+.container:has(.first-row):has(.cube21):has(#cube21:not(:checked)) > .second-row .cube22,
+.container:has(.first-row):has(.cube31):has(#cube31:not(:checked)) > .second-row .cube32,
+.container:has(.first-row):has(.cube41):has(#cube41:not(:checked)) > .second-row .cube42,
+.container:has(.first-row):has(.cube51):has(#cube51:not(:checked)) > .second-row .cube52,
+.container:has(.first-row):has(.cube61):has(#cube61:not(:checked)) > .second-row .cube62,
+.container:has(.first-row):has(.cube71):has(#cube71:not(:checked)) > .second-row .cube72,
+.container:has(.first-row):has(.cube81):has(#cube81:not(:checked)) > .second-row .cube82,
+.container:has(.first-row):has(.cube91):has(#cube91:not(:checked)) > .second-row .cube92,
+.container:has(.first-row):has(.cube101):has(#cube101:not(:checked)) > .second-row .cube102,
+.container:has(.first-row):has(.cube111):has(#cube111:not(:checked)) > .second-row .cube112,
+.container:has(.first-row):has(.cube121):has(#cube121:not(:checked)) > .second-row .cube122,
+.container:has(.first-row):has(.cube131):has(#cube131:not(:checked)) > .second-row .cube132,
+.container:has(.first-row):has(.cube141):has(#cube141:not(:checked)) > .second-row .cube142,
+.container:has(.first-row):has(.cube151):has(#cube151:not(:checked)) > .second-row .cube152,
+.container:has(.first-row):has(.cube161):has(#cube161:not(:checked)) > .second-row .cube162,
+.container:has(.first-row):has(.cube171):has(#cube171:not(:checked)) > .second-row .cube172,
+.container:has(.first-row):has(.cube181):has(#cube181:not(:checked)) > .second-row .cube182,
+.container:has(.first-row):has(.cube191):has(#cube191:not(:checked)) > .second-row .cube192,
+.container:has(.first-row):has(.cube201):has(#cube201:not(:checked)) > .second-row .cube202,
+.container:has(.first-row):has(.cube211):has(#cube211:not(:checked)) > .second-row .cube212,
+.container:has(.first-row):has(.cube221):has(#cube221:not(:checked)) > .second-row .cube222,
+.container:has(.first-row):has(.cube231):has(#cube231:not(:checked)) > .second-row .cube232,
+.container:has(.first-row):has(.cube241):has(#cube241:not(:checked)) > .second-row .cube242,
+.container:has(.first-row):has(.cube251):has(#cube251:not(:checked)) > .second-row .cube252,
+
+.container:has(.second-row):has(.cube12):has(#cube12:not(:checked)) > .third-row .cube13,
+.container:has(.second-row):has(.cube22):has(#cube22:not(:checked)) > .third-row .cube23,
+.container:has(.second-row):has(.cube32):has(#cube32:not(:checked)) > .third-row .cube33,
+.container:has(.second-row):has(.cube42):has(#cube42:not(:checked)) > .third-row .cube43,
+.container:has(.second-row):has(.cube52):has(#cube52:not(:checked)) > .third-row .cube53,
+.container:has(.second-row):has(.cube62):has(#cube62:not(:checked)) > .third-row .cube63,
+.container:has(.second-row):has(.cube72):has(#cube72:not(:checked)) > .third-row .cube73,
+.container:has(.second-row):has(.cube82):has(#cube82:not(:checked)) > .third-row .cube83,
+.container:has(.second-row):has(.cube92):has(#cube92:not(:checked)) > .third-row .cube93,
+.container:has(.second-row):has(.cube102):has(#cube102:not(:checked)) > .third-row .cube103,
+.container:has(.second-row):has(.cube112):has(#cube112:not(:checked)) > .third-row .cube113,
+.container:has(.second-row):has(.cube122):has(#cube122:not(:checked)) > .third-row .cube123,
+.container:has(.second-row):has(.cube132):has(#cube132:not(:checked)) > .third-row .cube133,
+.container:has(.second-row):has(.cube142):has(#cube142:not(:checked)) > .third-row .cube143,
+.container:has(.second-row):has(.cube152):has(#cube152:not(:checked)) > .third-row .cube153,
+.container:has(.second-row):has(.cube162):has(#cube162:not(:checked)) > .third-row .cube163,
+.container:has(.second-row):has(.cube172):has(#cube172:not(:checked)) > .third-row .cube173,
+.container:has(.second-row):has(.cube182):has(#cube182:not(:checked)) > .third-row .cube183,
+.container:has(.second-row):has(.cube192):has(#cube192:not(:checked)) > .third-row .cube193,
+.container:has(.second-row):has(.cube202):has(#cube202:not(:checked)) > .third-row .cube203,
+.container:has(.second-row):has(.cube212):has(#cube212:not(:checked)) > .third-row .cube213,
+.container:has(.second-row):has(.cube222):has(#cube222:not(:checked)) > .third-row .cube223,
+.container:has(.second-row):has(.cube232):has(#cube232:not(:checked)) > .third-row .cube233,
+.container:has(.second-row):has(.cube242):has(#cube242:not(:checked)) > .third-row .cube243,
+.container:has(.second-row):has(.cube252):has(#cube252:not(:checked)) > .third-row .cube253,
+
+.container:has(.first-row):has(.cube11):has(#cube11:not(:checked)) > .third-row .cube13,
+.container:has(.first-row):has(.cube21):has(#cube21:not(:checked)) > .third-row .cube23,
+.container:has(.first-row):has(.cube31):has(#cube31:not(:checked)) > .third-row .cube33,
+.container:has(.first-row):has(.cube41):has(#cube41:not(:checked)) > .third-row .cube43,
+.container:has(.first-row):has(.cube51):has(#cube51:not(:checked)) > .third-row .cube53,
+.container:has(.first-row):has(.cube61):has(#cube61:not(:checked)) > .third-row .cube63,
+.container:has(.first-row):has(.cube71):has(#cube71:not(:checked)) > .third-row .cube73,
+.container:has(.first-row):has(.cube81):has(#cube81:not(:checked)) > .third-row .cube83,
+.container:has(.first-row):has(.cube91):has(#cube91:not(:checked)) > .third-row .cube93,
+.container:has(.first-row):has(.cube101):has(#cube101:not(:checked)) > .third-row .cube103,
+.container:has(.first-row):has(.cube111):has(#cube111:not(:checked)) > .third-row .cube113,
+.container:has(.first-row):has(.cube121):has(#cube121:not(:checked)) > .third-row .cube123,
+.container:has(.first-row):has(.cube131):has(#cube131:not(:checked)) > .third-row .cube133,
+.container:has(.first-row):has(.cube141):has(#cube141:not(:checked)) > .third-row .cube143,
+.container:has(.first-row):has(.cube151):has(#cube151:not(:checked)) > .third-row .cube153,
+.container:has(.first-row):has(.cube161):has(#cube161:not(:checked)) > .third-row .cube163,
+.container:has(.first-row):has(.cube171):has(#cube171:not(:checked)) > .third-row .cube173,
+.container:has(.first-row):has(.cube181):has(#cube181:not(:checked)) > .third-row .cube183,
+.container:has(.first-row):has(.cube191):has(#cube191:not(:checked)) > .third-row .cube193,
+.container:has(.first-row):has(.cube201):has(#cube201:not(:checked)) > .third-row .cube203,
+.container:has(.first-row):has(.cube211):has(#cube211:not(:checked)) > .third-row .cube213,
+.container:has(.first-row):has(.cube221):has(#cube221:not(:checked)) > .third-row .cube223,
+.container:has(.first-row):has(.cube231):has(#cube231:not(:checked)) > .third-row .cube233,
+.container:has(.first-row):has(.cube241):has(#cube241:not(:checked)) > .third-row .cube243,
+.container:has(.first-row):has(.cube251):has(#cube251:not(:checked)) > .third-row .cube253{
+    background-color: transparent;
+    display: none !important;
+}
+
+
+
+.container:has(.first-row):has(.cube11):has(#cube11:checked) > .second-row .cube12,
+.container:has(.first-row):has(.cube21):has(#cube21:checked) > .second-row .cube22,
+.container:has(.first-row):has(.cube31):has(#cube31:checked) > .second-row .cube32,
+.container:has(.first-row):has(.cube41):has(#cube41:checked) > .second-row .cube42,
+.container:has(.first-row):has(.cube51):has(#cube51:checked) > .second-row .cube52,
+.container:has(.first-row):has(.cube61):has(#cube61:checked) > .second-row .cube62,
+.container:has(.first-row):has(.cube71):has(#cube71:checked) > .second-row .cube72,
+.container:has(.first-row):has(.cube81):has(#cube81:checked) > .second-row .cube82,
+.container:has(.first-row):has(.cube91):has(#cube91:checked) > .second-row .cube92,
+.container:has(.first-row):has(.cube101):has(#cube101:checked) > .second-row .cube102,
+.container:has(.first-row):has(.cube111):has(#cube111:checked) > .second-row .cube112,
+.container:has(.first-row):has(.cube121):has(#cube121:checked) > .second-row .cube122,
+.container:has(.first-row):has(.cube131):has(#cube131:checked) > .second-row .cube132,
+.container:has(.first-row):has(.cube141):has(#cube141:checked) > .second-row .cube142,
+.container:has(.first-row):has(.cube151):has(#cube151:checked) > .second-row .cube152,
+.container:has(.first-row):has(.cube161):has(#cube161:checked) > .second-row .cube162,
+.container:has(.first-row):has(.cube171):has(#cube171:checked) > .second-row .cube172,
+.container:has(.first-row):has(.cube181):has(#cube181:checked) > .second-row .cube182,
+.container:has(.first-row):has(.cube191):has(#cube191:checked) > .second-row .cube192,
+.container:has(.first-row):has(.cube201):has(#cube201:checked) > .second-row .cube202,
+.container:has(.first-row):has(.cube211):has(#cube211:checked) > .second-row .cube212,
+.container:has(.first-row):has(.cube221):has(#cube221:checked) > .second-row .cube222,
+.container:has(.first-row):has(.cube231):has(#cube231:checked) > .second-row .cube232,
+.container:has(.first-row):has(.cube241):has(#cube241:checked) > .second-row .cube242,
+.container:has(.first-row):has(.cube251):has(#cube251:checked) > .second-row .cube252,
+
+.container:has(.second-row):has(.cube12):has(#cube12:checked) > .third-row .cube13,
+.container:has(.second-row):has(.cube22):has(#cube22:checked) > .third-row .cube23,
+.container:has(.second-row):has(.cube32):has(#cube32:checked) > .third-row .cube33,
+.container:has(.second-row):has(.cube42):has(#cube42:checked) > .third-row .cube43,
+.container:has(.second-row):has(.cube52):has(#cube52:checked) > .third-row .cube53,
+.container:has(.second-row):has(.cube62):has(#cube62:checked) > .third-row .cube63,
+.container:has(.second-row):has(.cube72):has(#cube72:checked) > .third-row .cube73,
+.container:has(.second-row):has(.cube82):has(#cube82:checked) > .third-row .cube83,
+.container:has(.second-row):has(.cube92):has(#cube92:checked) > .third-row .cube93,
+.container:has(.second-row):has(.cube102):has(#cube102:checked) > .third-row .cube103,
+.container:has(.second-row):has(.cube112):has(#cube112:checked) > .third-row .cube113,
+.container:has(.second-row):has(.cube122):has(#cube122:checked) > .third-row .cube123,
+.container:has(.second-row):has(.cube132):has(#cube132:checked) > .third-row .cube133,
+.container:has(.second-row):has(.cube142):has(#cube142:checked) > .third-row .cube143,
+.container:has(.second-row):has(.cube152):has(#cube152:checked) > .third-row .cube153,
+.container:has(.second-row):has(.cube162):has(#cube162:checked) > .third-row .cube163,
+.container:has(.second-row):has(.cube172):has(#cube172:checked) > .third-row .cube173,
+.container:has(.second-row):has(.cube182):has(#cube182:checked) > .third-row .cube183,
+.container:has(.second-row):has(.cube192):has(#cube192:checked) > .third-row .cube193,
+.container:has(.second-row):has(.cube202):has(#cube202:checked) > .third-row .cube203,
+.container:has(.second-row):has(.cube212):has(#cube212:checked) > .third-row .cube213,
+.container:has(.second-row):has(.cube222):has(#cube222:checked) > .third-row .cube223,
+.container:has(.second-row):has(.cube232):has(#cube232:checked) > .third-row .cube233,
+.container:has(.second-row):has(.cube242):has(#cube242:checked) > .third-row .cube243,
+.container:has(.second-row):has(.cube252):has(#cube252:checked) > .third-row .cube253, 
+
+.container:has(.first-row):has(.cube11):has(#cube11:checked) > .third-row .cube13,
+.container:has(.first-row):has(.cube21):has(#cube21:checked) > .third-row .cube23,
+.container:has(.first-row):has(.cube31):has(#cube31:checked) > .third-row .cube33,
+.container:has(.first-row):has(.cube41):has(#cube41:checked) > .third-row .cube43,
+.container:has(.first-row):has(.cube51):has(#cube51:checked) > .third-row .cube53,
+.container:has(.first-row):has(.cube61):has(#cube61:checked) > .third-row .cube63,
+.container:has(.first-row):has(.cube71):has(#cube71:checked) > .third-row .cube73,
+.container:has(.first-row):has(.cube81):has(#cube81:checked) > .third-row .cube83,
+.container:has(.first-row):has(.cube91):has(#cube91:checked) > .third-row .cube93,
+.container:has(.first-row):has(.cube101):has(#cube101:checked) > .third-row .cube103,
+.container:has(.first-row):has(.cube111):has(#cube111:checked) > .third-row .cube113,
+.container:has(.first-row):has(.cube121):has(#cube121:checked) > .third-row .cube123,
+.container:has(.first-row):has(.cube131):has(#cube131:checked) > .third-row .cube133,
+.container:has(.first-row):has(.cube141):has(#cube141:checked) > .third-row .cube143,
+.container:has(.first-row):has(.cube151):has(#cube151:checked) > .third-row .cube153,
+.container:has(.first-row):has(.cube161):has(#cube161:checked) > .third-row .cube163,
+.container:has(.first-row):has(.cube171):has(#cube171:checked) > .third-row .cube173,
+.container:has(.first-row):has(.cube181):has(#cube181:checked) > .third-row .cube183,
+.container:has(.first-row):has(.cube191):has(#cube191:checked) > .third-row .cube193,
+.container:has(.first-row):has(.cube201):has(#cube201:checked) > .third-row .cube203,
+.container:has(.first-row):has(.cube211):has(#cube211:checked) > .third-row .cube213,
+.container:has(.first-row):has(.cube221):has(#cube221:checked) > .third-row .cube223,
+.container:has(.first-row):has(.cube231):has(#cube231:checked) > .third-row .cube233,
+.container:has(.first-row):has(.cube241):has(#cube241:checked) > .third-row .cube243,
+.container:has(.first-row):has(.cube251):has(#cube251:checked) > .third-row .cube253{
+    /* pointer-events: all; */
+    display: block;
+}
+
+
+.container:has(.first-row):has(.cube11):has(#cube11:checked) > .second-row .cube12:hover label,
+.container:has(.first-row):has(.cube21):has(#cube21:checked) > .second-row .cube22:hover label,
+.container:has(.first-row):has(.cube31):has(#cube31:checked) > .second-row .cube32:hover label,
+.container:has(.first-row):has(.cube41):has(#cube41:checked) > .second-row .cube42:hover label,
+.container:has(.first-row):has(.cube51):has(#cube51:checked) > .second-row .cube52:hover label,
+.container:has(.first-row):has(.cube61):has(#cube61:checked) > .second-row .cube62:hover label,
+.container:has(.first-row):has(.cube71):has(#cube71:checked) > .second-row .cube72:hover label,
+.container:has(.first-row):has(.cube81):has(#cube81:checked) > .second-row .cube82:hover label,
+.container:has(.first-row):has(.cube91):has(#cube91:checked) > .second-row .cube92:hover label,
+.container:has(.first-row):has(.cube101):has(#cube101:checked) > .second-row .cube102:hover label,
+.container:has(.first-row):has(.cube111):has(#cube111:checked) > .second-row .cube112:hover label,
+.container:has(.first-row):has(.cube121):has(#cube121:checked) > .second-row .cube122:hover label,
+.container:has(.first-row):has(.cube131):has(#cube131:checked) > .second-row .cube132:hover label,
+.container:has(.first-row):has(.cube141):has(#cube141:checked) > .second-row .cube142:hover label,
+.container:has(.first-row):has(.cube151):has(#cube151:checked) > .second-row .cube152:hover label,
+.container:has(.first-row):has(.cube161):has(#cube161:checked) > .second-row .cube162:hover label,
+.container:has(.first-row):has(.cube171):has(#cube171:checked) > .second-row .cube172:hover label,
+.container:has(.first-row):has(.cube181):has(#cube181:checked) > .second-row .cube182:hover label,
+.container:has(.first-row):has(.cube191):has(#cube191:checked) > .second-row .cube192:hover label,
+.container:has(.first-row):has(.cube201):has(#cube201:checked) > .second-row .cube202:hover label,
+.container:has(.first-row):has(.cube211):has(#cube211:checked) > .second-row .cube212:hover label,
+.container:has(.first-row):has(.cube221):has(#cube221:checked) > .second-row .cube222:hover label,
+.container:has(.first-row):has(.cube231):has(#cube231:checked) > .second-row .cube232:hover label,
+.container:has(.first-row):has(.cube241):has(#cube241:checked) > .second-row .cube242:hover label,
+.container:has(.first-row):has(.cube251):has(#cube251:checked) > .second-row .cube252:hover label,
+
+.container:has(.second-row):has(.cube12):has(#cube12:checked) > .third-row .cube13:hover label,
+.container:has(.second-row):has(.cube22):has(#cube22:checked) > .third-row .cube23:hover label,
+.container:has(.second-row):has(.cube32):has(#cube32:checked) > .third-row .cube33:hover label,
+.container:has(.second-row):has(.cube42):has(#cube42:checked) > .third-row .cube43:hover label,
+.container:has(.second-row):has(.cube52):has(#cube52:checked) > .third-row .cube53:hover label,
+.container:has(.second-row):has(.cube62):has(#cube62:checked) > .third-row .cube63:hover label,
+.container:has(.second-row):has(.cube72):has(#cube72:checked) > .third-row .cube73:hover label,
+.container:has(.second-row):has(.cube82):has(#cube82:checked) > .third-row .cube83:hover label,
+.container:has(.second-row):has(.cube92):has(#cube92:checked) > .third-row .cube93:hover label,
+.container:has(.second-row):has(.cube102):has(#cube102:checked) > .third-row .cube103:hover label,
+.container:has(.second-row):has(.cube112):has(#cube112:checked) > .third-row .cube113:hover label,
+.container:has(.second-row):has(.cube122):has(#cube122:checked) > .third-row .cube123:hover label,
+.container:has(.second-row):has(.cube132):has(#cube132:checked) > .third-row .cube133:hover label,
+.container:has(.second-row):has(.cube142):has(#cube142:checked) > .third-row .cube143:hover label,
+.container:has(.second-row):has(.cube152):has(#cube152:checked) > .third-row .cube153:hover label,
+.container:has(.second-row):has(.cube162):has(#cube162:checked) > .third-row .cube163:hover label,
+.container:has(.second-row):has(.cube172):has(#cube172:checked) > .third-row .cube173:hover label,
+.container:has(.second-row):has(.cube182):has(#cube182:checked) > .third-row .cube183:hover label,
+.container:has(.second-row):has(.cube192):has(#cube192:checked) > .third-row .cube193:hover label,
+.container:has(.second-row):has(.cube202):has(#cube202:checked) > .third-row .cube203:hover label,
+.container:has(.second-row):has(.cube212):has(#cube212:checked) > .third-row .cube213:hover label,
+.container:has(.second-row):has(.cube222):has(#cube222:checked) > .third-row .cube223:hover label,
+.container:has(.second-row):has(.cube232):has(#cube232:checked) > .third-row .cube233:hover label,
+.container:has(.second-row):has(.cube242):has(#cube242:checked) > .third-row .cube243:hover label,
+.container:has(.second-row):has(.cube252):has(#cube252:checked) > .third-row .cube253:hover label{
+    box-shadow: inset 0px 0px 30px rgba(124, 224, 255, 0.4);
+}
